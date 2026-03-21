@@ -1,0 +1,51 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.input,
+.textarea,
+.select {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #e5e7eb;
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.actions button {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+.actions button:first-child {
+  background: #e5e7eb;
+}
+
+.actions button:last-child {
+  background: #2563eb;
+  color: white;
+}
+
+.error {
+  color: #e74c3c;
+  font-size: 12px;
+  margin-top: 4px;
+}
