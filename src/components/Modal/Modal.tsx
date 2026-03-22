@@ -15,8 +15,17 @@ function Modal({ children, onClose }: ModalProps) {
       if (e.key === "Escape") onClose();
     };
 
+    // 🔒 блокуємо скрол
+    document.body.style.overflow = "hidden";
+
     window.addEventListener("keydown", handleEsc);
-    return () => window.removeEventListener("keydown", handleEsc);
+
+    return () => {
+      window.removeEventListener("keydown", handleEsc);
+
+      // 🔓 повертаємо скрол назад
+      document.body.style.overflow = "auto";
+    };
   }, [onClose]);
 
   const handleBackdropClick = (e: React.MouseEvent<HTMLDivElement>) => {
