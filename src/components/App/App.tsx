@@ -42,6 +42,7 @@ function App() {
             <Pagination
             pageCount={data.totalPages}
             onPageChange={setPage}
+            currentPage={page}
             />
           </div>
         )}
