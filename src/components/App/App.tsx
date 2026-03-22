@@ -40,9 +40,8 @@ function App() {
         {data.totalPages > 1 && (
           <div className={css.center}>
             <Pagination
-              pageCount={data.totalPages}
-              onPageChange={setPage}
-              currentPage={page}
+            pageCount={data.totalPages}
+            onPageChange={setPage}
             />
           </div>
         )}
