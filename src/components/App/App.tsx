@@ -35,31 +35,27 @@ function App() {
   return (
     <div className={css.app}>
       <header className={css.toolbar}>
-        {/* 🔍 SEARCH */}
         <SearchBox onSearch={debouncedSearch} />
 
-        {/* 🔥 PAGINATION */}
         {data.totalPages > 1 && (
           <div className={css.center}>
             <Pagination
               pageCount={data.totalPages}
               onPageChange={setPage}
+              currentPage={page}
             />
           </div>
         )}
 
-        {/* ➕ BUTTON */}
         <button className={css.button} onClick={() => setIsOpen(true)}>
           Create note +
         </button>
       </header>
 
-      {/* 📦 LIST */}
       {data.notes.length > 0 && (
         <NoteList notes={data.notes} />
       )}
 
-      {/* 🪟 MODAL */}
       {isOpen && (
         <Modal onClose={() => setIsOpen(false)}>
           <NoteForm onClose={() => setIsOpen(false)} />
